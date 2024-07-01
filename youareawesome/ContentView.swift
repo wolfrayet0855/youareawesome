@@ -30,6 +30,8 @@ struct ContentView: View {
                 .foregroundColor(Color.red)
                 .frame(maxWidth: .infinity)
                 .padding()
+                //.animation(.default, value: messageString)
+                .animation(.easeInOut(duration: 0.15), value: messageString)
             
             Image(imageName)
                 .resizable()
@@ -37,6 +39,7 @@ struct ContentView: View {
                 .cornerRadius(30)
                 .shadow(radius:30)
                 .padding()
+                .animation(.default, value: messageString)
             
             Spacer()
             
@@ -49,6 +52,7 @@ struct ContentView: View {
                             audioPlayer.stop()
                         }
                     }
+                    .tint(.accentColor)
                 Spacer()
                 
                 Button("Show Message")  {
